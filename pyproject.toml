@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vectorcraft-neon"
+version = "1.0.0"
+authors = [
+  { name="Malek Mesbah", email="maleksobhy2004@gmail.com" },
+]
+description = "Automated Logo Centerline & Cut-Line Vectorizer for Neon Signs, Laser, and CNC Fabrication"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "Pillow>=9.0.0",
+    "streamlit>=1.20.0",
+]
+
+[project.scripts]
+vectorcraft = "vectorcraft.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
